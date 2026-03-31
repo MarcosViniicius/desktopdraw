@@ -2,7 +2,7 @@
   "name": "desktopdraw",
   "version": "0.0.1",
   "description": "Excalidraw desktop application built with React and Electron",
-  "author": "Your Name <your.email@example.com>",
+  "author": "Marcos Vinicius marcosvinicius.lucena@protonmail.com",
   "private": true,
   "type": "module",
   "main": "./electron/main.cjs",
