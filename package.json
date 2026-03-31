@@ -16,41 +16,43 @@
     "build:linux": "npm run build && electron-builder --linux",
     "build:all": "npm run build && electron-builder -mwl"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "@excalidraw/excalidraw": "^0.18.0",
+    "@react-router/dev": "7.13.2",
     "@react-router/node": "7.13.2",
     "@react-router/serve": "7.13.2",
-    "concurrently": "^9.2.1",
-    "cross-env": "^10.1.0",
-    "isbot": "^5.1.36",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-router": "7.13.2",
-    "wait-on": "^9.0.4"
-  },
-  "devDependencies": {
-    "@react-router/dev": "7.13.2",
     "@tailwindcss/vite": "^4.2.2",
     "@types/node": "^22",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
     "electron": "^41.1.0",
     "electron-builder": "^25.1.8",
+    "isbot": "^5.1.36",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-router": "7.13.2",
     "tailwindcss": "^4.2.2",
     "typescript": "^5.9.3",
     "vite": "^7.1.7",
-    "vite-tsconfig-paths": "^5.1.4"
+    "vite-tsconfig-paths": "^5.1.4",
+    "wait-on": "^9.0.4"
   },
   "build": {
     "appId": "com.desktopdraw.app",
     "productName": "DesktopDraw",
+    "npmRebuild": false,
     "buildDependenciesFromSource": false,
     "nodeGypRebuild": false,
+    "asar": true,
+    "compression": "maximum",
     "files": [
-      "build/**/*",
+      "build/client/**/*",
       "electron/**/*",
-      "node_modules/**/*",
-      "package.json"
+      "package.json",
+      "!node_modules/**/*"
     ],
     "directories": {
       "buildResources": "public",
@@ -64,7 +66,7 @@
         },
         "portable"
       ],
-      "icon": "public/favicon.ico"
+      "icon": "public/favicon.png"
     },
     "nsis": {
       "oneClick": false,
@@ -72,11 +74,11 @@
     },
     "mac": {
       "target": ["dmg", "zip"],
-      "icon": "public/favicon.ico"
+      "icon": "public/favicon.png"
     },
     "linux": {
       "target": ["AppImage", "deb"],
-      "icon": "public/favicon.ico",
+      "icon": "public/favicon.png",
       "category": "Graphics"
     }
   }

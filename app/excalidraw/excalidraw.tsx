@@ -20,13 +20,19 @@ export function Excalidraw() {
   }, []);
 
   return (
-    <main style={{}}>
-
-      <div style={{ width: "100vw", height: "100vh" }}>
+    <main className="h-screen w-screen overflow-hidden bg-white dark:bg-gray-950">
+      <div className="w-full h-full">
         {ExcalidrawComponent ? (
           <ExcalidrawComponent />
         ) : (
-          <p style={{ textAlign: "center" }}>Loading Excalidraw...</p>
+          <div className="flex h-full w-full items-center justify-center">
+            <div className="text-center">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mb-4 mx-auto"></div>
+              <p className="text-xl font-medium text-gray-600 dark:text-gray-300">
+                Iniciando DesktopDraw...
+              </p>
+            </div>
+          </div>
         )}
       </div>
     </main>
